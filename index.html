@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>M4rexSocial - Login</title>
+    <!-- style -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="logo">
+        <img src="assets/marex-logo.png" alt="logo" />
+      </div>
+
+      <h1>
+        Demo version of M4rex social network. <br />
+        Welcome!
+      </h1>
+
+      <!-- login form -->
+      <div class="main-wrapper">
+        <form id="loginForm">
+          <h2 class="headingForm">Login</h2>
+
+          <div>
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="login_email"
+              placeholder="jhondoe@gmail.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              id="login_password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div>
+            <button class="btnSignIn">Sign in</button>
+          </div>
+        </form>
+
+        <div class="noAccRegister">
+          <p>Don't have an account?</p>
+          <button type="submit" id="btnRegistration">Register here!</button>
+        </div>
+      </div>
+      <!-- end of login form -->
+
+      <!-- modal registration -->
+      <div class="customModal">
+        <button id="closeModal">X</button>
+        <form id="registrationForm">
+          <h2 class="headingForm">User Registration</h2>
+
+          <div>
+            <label for="userName">User name: *</label>
+            <input
+              type="text"
+              name="userName"
+              id="user_name"
+              placeholder="markopetrovic1"
+            />
+          </div>
+
+          <div>
+            <label for="registerEmail">Email address: *</label>
+            <input
+              type="email"
+              name="registerEmail"
+              id="register_email"
+              placeholder="jhondoe@gmail.com"
+            />
+          </div>
+
+          <div>
+            <label for="registerPassword">Password: *</label>
+            <input
+              type="password"
+              name="registerPassword"
+              id="register_password"
+              placeholder="********"
+            />
+          </div>
+
+          <div>
+            <label for="registerRepeatPassword">Confirm Password: *</label>
+            <input
+              type="password"
+              name="registerRepeatPassword"
+              id="register_repeat_password"
+              placeholder="********"
+            />
+          </div>
+
+          <div>
+            <button type="submit" class="btnRegister">Create account</button>
+          </div>
+        </form>
+
+        <!-- alert box -->
+        <div class="alertBox">
+          <img class="alertImg" src="assets/error.png" alt="error icon" />
+          <p class="alertMess">Error message</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- javascript -->
+    <script src="js/validation.js"></script>
+    <script src="js/Session.js"></script>
+    <script src="js/User.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

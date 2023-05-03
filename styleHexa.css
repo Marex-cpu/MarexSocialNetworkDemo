@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap");
+/* setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background: #222;
+  color: #fff;
+}
+
+.inner-container {
+  padding-top: 3rem;
+}
+
+/* left content */
+.inner-container.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.inner-container.left-side p {
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.inner-container.left-side img {
+  width: 70%;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  border: 5px solid #fff;
+  margin-bottom: 20px;
+}
+
+.inner-container.left-side #openEditAccount {
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 200ms ease;
+}
+
+.inner-container.left-side #openEditAccount svg {
+  margin-right: 8px;
+}
+
+.inner-container.left-side #openEditAccount:hover,
+.inner-container.left-side #openEditAccount:active {
+  opacity: 0.8;
+}
+
+.inner-container.left-side #signOut {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 200ms ease;
+}
+
+.inner-container.left-side #signOut svg {
+  margin-right: 8px;
+}
+
+.inner-container.left-side #signOut:hover,
+.inner-container.left-side #signOut:active {
+  color: #ff0000;
+}
+
+/* right content */
+.inner-container.right-side form {
+  display: flex;
+  height: 100px;
+}
+
+.inner-container.right-side textarea {
+  width: 85%;
+  border: none;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding: 10px;
+  resize: none;
+  outline: none;
+}
+
+.inner-container.right-side .publishPost {
+  width: 15%;
+  border: 0;
+  border-left: 1px solid #222;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  background: #fff;
+  color: #222;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}
+.inner-container.right-side .publishPost:hover {
+  background: #eee;
+}
+
+/* modal for edit account */
+.modalEditAccount {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(34, 34, 34, 0.8);
+  opacity: 0;
+  width: auto;
+  height: auto;
+  z-index: -10;
+  visibility: hidden;
+  transition: all 200ms ease;
+}
+
+.modalEditAccount.open {
+  opacity: 1;
+  z-index: 10;
+  visibility: visible;
+}
+
+.modalEditAccount .containerModal {
+  position: relative;
+  width: 530px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  color: #000;
+  padding: 40px;
+}
+
+.modalEditAccount .containerModal h4 {
+  margin: 0 0 20px;
+}
+
+#closeEditModal {
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  border: none;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#closeEditModal:hover {
+  color: #ff0000;
+}
+
+#editProfile div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#editProfile div:last-child {
+  margin-bottom: 0;
+}
+
+#editProfile div label {
+  color: #000;
+  font-size: 16px;
+}
+
+#editProfile div input {
+  padding: 10px;
+  border: 1px solid #222;
+}
+
+#editProfile .buttonsContainer {
+  gap: 20px;
+}
+
+.buttonsContainer button {
+  width: 150px;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #222;
+  transition: all 0.3s;
+}
+
+.buttonsContainer button:first-child:hover {
+  background: #222;
+  color: #fff;
+}
+
+.buttonsContainer button:last-child:hover {
+  border: 1px solid #ff0000;
+  background: #ff0000;
+  color: #fff;
+}
+
+/* post style */
+#allPostWrapper {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.singlePost {
+  color: #000;
+  background: #eee;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.singlePost .postContent {
+  font-size: 24px;
+  color: #000;
+  border-bottom: 1px solid #222;
+}
+
+#allPostWrapper .postActions {
+  margin-top: 5px;
+}
+
+.postActions p {
+  margin-bottom: 8px;
+}
+
+.postActions div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.postActions div button {
+  padding: 0 8px;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+}
+.postActions div button:hover {
+  opacity: 0.7;
+}
+
+.postActions div .likePost {
+  color: #000;
+}
+
+.postActions div .btnRemovePost {
+  padding: 0 8px;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  transition: all 0.3s;
+}
+.btnRemovePost:hover {
+  opacity: 0.7;
+}
+
+#allPostWrapper #commentForm {
+  display: none;
+  margin-top: 1rem;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+#allPostWrapper #commentForm div {
+  display: flex;
+  width: 100%;
+}
+#allPostWrapper #commentForm .singlePostComment {
+  border: 1px solid #222;
+  margin-top: 1rem;
+  padding: 10px;
+  font-size: 18px;
+  background: #ddd;
+  word-wrap: break-word;
+}
+#allPostWrapper #commentForm input {
+  width: 85%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #222;
+}
+#allPostWrapper #commentForm .postComment {
+  width: 15%;
+  border: none;
+  background: #222;
+  border-radius: 0;
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#allPostWrapper #commentForm .postComment:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 992px) {
+  .inner-container.left-side p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  #allPostWrapper #commentForm .postComment {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #editProfile div {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .inner-container.left-side p {
+    white-space: nowrap;
+  }
+
+  .modalEditAccount .containerModal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  #editProfile div {
+    max-width: 450px !important;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  /* right content */
+  .inner-container.right-side form {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .inner-container.right-side textarea {
+    width: 100%;
+    border: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 8px;
+    height: 120px;
+  }
+
+  .inner-container.right-side .publishPost {
+    width: 100%;
+    border: 0;
+    border-left: 0;
+    border-top: 1px solid #222;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 0;
+    padding: 5px 0;
+  }
+
+  #allPostWrapper #commentForm div {
+    display: flex;
+    flex-direction: column;
+  }
+  #allPostWrapper #commentForm input {
+    width: 100%;
+  }
+  #allPostWrapper #commentForm .postComment {
+    width: fit-content;
+    padding: 8px 10px;
+    margin-top: 5px;
+    align-self: flex-end;
+  }
+  #allPostWrapper #commentForm .postComment:hover {
+    opacity: 0.9;
+  }
+}

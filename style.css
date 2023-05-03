@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap");
+/* setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background: #222;
+  /* background: #fff; */
+  color: #fff;
+}
+
+main {
+  padding: 0 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logo {
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.logo img {
+  margin-top: 50px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+/* login form, modal registration */
+.main-wrapper,
+.customModal {
+  background: #000;
+  max-width: 650px;
+  margin: 0 auto 30px;
+  padding: 25px 25px 10px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.main-wrapper {
+  /* display: none; */
+}
+.customModal {
+  display: none;
+  position: relative;
+}
+
+form .headingForm {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-block: 15px;
+}
+
+form div label {
+  margin-bottom: 5px;
+}
+
+form div input {
+  padding: 10px;
+}
+
+form .btnSignIn {
+  display: inline-block;
+  align-self: center;
+  min-width: 50px;
+  padding: 8px 15px;
+  color: #fff;
+  background: #222;
+  cursor: pointer;
+}
+
+.noAccRegister {
+  margin: 50px 0 15px;
+  text-align: center;
+}
+
+.noAccRegister p {
+  margin-bottom: 10px;
+}
+.noAccRegister #btnRegistration {
+  display: inline-block;
+  align-self: center;
+  min-width: 50px;
+  padding: 8px 15px;
+  color: #fff;
+  background: #222;
+  cursor: pointer;
+}
+
+form .btnRegister {
+  display: inline-block;
+  align-self: center;
+  min-width: 50px;
+  padding: 8px 15px;
+  color: #fff;
+  background: #222;
+  cursor: pointer;
+}
+
+.customModal #closeModal {
+  padding: 8px;
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.customModal #closeModal:hover {
+  color: #ff0000;
+}
+
+/* alert-box style */
+.alertBox {
+  width: 320px;
+  min-height: 150px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 100px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  transition: 1s;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+}
+.alertBox.show {
+  opacity: 1;
+  pointer-events: all;
+  top: 50%;
+  visibility: visible;
+}
+
+.alertImg {
+  display: block;
+  margin: 10px auto 30px;
+  height: 60px;
+}
+
+.alertMess {
+  color: #e24c4b;
+  font-size: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 250px;
+    margin-bottom: 30px;
+  }
+  .logo img {
+    margin-top: 30px;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 26px;
+  }
+}
